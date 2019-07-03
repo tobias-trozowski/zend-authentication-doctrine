@@ -1,0 +1,53 @@
+{
+    "name": "tobias/zend-authentication-doctrine",
+    "description": "Use Zend\\Authentication with Doctrine",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "doctrine",
+        "zend",
+        "zendframework",
+        "auth"
+    ],
+    "authors": [
+        {
+            "name": "Tobias Trozowski",
+            "email": "tobias@trozowski.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "doctrine/inflector": "^1.3",
+        "doctrine/persistence": "^1.1",
+        "psr/container": "^1.0",
+        "sandrokeil/interop-config": "^2.1",
+        "zendframework/zend-authentication": "^2.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2",
+        "squizlabs/php_codesniffer": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tobias\\Zend\\Authentication\\Doctrine\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TobiasTest\\Zend\\Authentication\\Doctrine\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --coverage-clover clover.xml"
+    }
+}
